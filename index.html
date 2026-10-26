@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#d8f5ff">
+    <title>Gerak Ceria - Petualangan Gerak Lurus</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <section class="page home-page" id="page-home" aria-labelledby="welcome-title">
+            <div class="welcome-card">
+                <h1 id="welcome-title">GERAK CERIA</h1>
+                <h2>Petualangan Gerak Lurus</h2>
+                <p>Ayo belajar posisi, jarak, dan perpindahan melalui petualangan sehari-hari!</p>
+                <button class="primary-button" id="start-button" type="button">MULAI</button>
+                <button class="voice-button" id="listen-button" type="button" aria-pressed="false">Dengarkan sambutan</button>
+                <p class="status" id="status" role="status" aria-live="polite"></p>
+            </div>
+        </section>
+
+        <section class="page menu-page" id="page-menu" aria-labelledby="menu-title" hidden>
+            <div class="menu-shell">
+                <button class="menu-back" type="button" data-go="home">← Kembali</button>
+                <header class="menu-heading">
+                    <h1 id="menu-title">Pilih Aktivitas</h1>
+                    <p>Petualangan Gerak Lurus dimulai di sini. Kamu mau belajar atau bermain?</p>
+                </header>
+                <div class="menu-options">
+                    <article class="menu-option">
+                        <span class="menu-option-icon" aria-hidden="true">📚</span>
+                    <h2>Materi</h2>
+                    <p>Pelajari konsep posisi, jarak, dan perpindahan melalui contoh konkret dalam kehidupan sehari-hari.</p>
+                    <button type="button" data-go="material">Buka Materi</button>
+                    </article>
+                    <article class="menu-option game">
+                        <span class="menu-option-icon" aria-hidden="true">🎲</span>
+                        <h2>Permainan</h2>
+                        <p>Mainkan permainan interaktif dan jawab soal tentang posisi, jarak, serta perpindahan.</p>
+                        <button type="button" data-go="game">Mainkan</button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="page content-page" id="page-material" aria-labelledby="material-title" hidden>
+            <button class="back-button" type="button" data-go="menu">← Kembali</button>
+            <div class="content-card">
+                <h1 id="material-title">Materi Gerak Lurus</h1>
+                <p>Pilih materi yang ingin kamu pelajari melalui contoh konkret dalam kehidupan sehari-hari.</p>
+                <div class="topic-list" id="topic-list">
+                    <button class="topic-button" type="button" data-topic="posisi">
+                        <span class="topic-name">Posisi</span>
+                        <span class="topic-question">Di mana aku berada?</span>
+                    </button>
+                    <button class="topic-button" type="button" data-topic="jarak">
+                        <span class="topic-name">Jarak</span>
+                        <span class="topic-question">Seberapa jauh aku bergerak?</span>
+                    </button>
+                    <button class="topic-button" type="button" data-topic="perpindahan">
+                        <span class="topic-name">Perpindahan</span>
+                        <span class="topic-question">Dari mana dan ke mana aku bergerak?</span>
+                    </button>
+                </div>
+                <article class="lesson-detail" id="lesson-detail" aria-live="polite" hidden>
+                    <h2 id="lesson-title"></h2>
+                    <p id="lesson-description"></p>
+                </article>
+            </div>
+        </section>
+
+        <section class="page content-page game-page" id="page-game" aria-labelledby="game-title" hidden>
+            <div class="game-intro" id="game-intro">
+                <div class="intro-scene">
+                    <div class="intro-topbar">
+                        <button class="intro-control intro-home" type="button" data-go="menu" aria-label="Kembali ke menu aktivitas">⌂</button>
+                        <span></span>
+                        <button class="intro-control intro-listen" type="button" data-speak="Ayo belajar posisi, jarak, dan perpindahan. Pilih posisi A, B, atau C, lalu tekan Main Game untuk bermain." aria-label="Dengarkan penjelasan halaman">
+                            <span aria-hidden="true">🔊</span> Dengarkan Penjelasan
+                        </button>
+                    </div>
+                    <header class="intro-title">
+                        <h1 id="game-title">Gerak Lurus</h1>
+                        <p>Posisi • Jarak • Perpindahan</p>
+                    </header>
+                    <div class="scene-cloud left" aria-hidden="true"></div>
+                    <div class="scene-cloud right" aria-hidden="true"></div>
+                    <div class="scene-city" aria-hidden="true"></div>
+                    <div class="scene-tree left" aria-hidden="true"></div>
+                    <div class="scene-tree right" aria-hidden="true"></div>
+                    <div class="scene-road" aria-hidden="true"></div>
+                    <div class="podium-row" aria-label="Tiga titik posisi pada lintasan">
+                        <div class="podium podium-a" aria-label="Posisi A">
+                            <span class="podium-letter">A</span>
+                        </div>
+                        <div class="podium podium-b" aria-label="Posisi B">
+                            <span class="podium-letter">B</span>
+                        </div>
+                        <div class="podium podium-c" aria-label="Posisi C">
+                            <span class="podium-letter">C</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="concept-grid">
+                    <article class="concept-card position">
+                        <h2>Posisi</h2>
+                        <span class="concept-icon" aria-hidden="true">♟</span>
+                        <p>Tempat benda berada.</p>
+                        <button class="concept-audio" type="button" data-speak="Posisi adalah tempat atau letak suatu benda berada." aria-label="Dengarkan penjelasan tentang posisi">🔊</button>
+                    </article>
+                    <article class="concept-card displacement">
+                        <h2>Perpindahan</h2>
+                        <span class="concept-icon" aria-hidden="true">● ➜ ●</span>
+                        <p>Dari posisi awal ke posisi akhir.</p>
+                        <button class="concept-audio" type="button" data-speak="Perpindahan adalah perubahan posisi dari titik awal ke titik akhir." aria-label="Dengarkan penjelasan tentang perpindahan">🔊</button>
+                    </article>
+                    <article class="concept-card distance">
+                        <h2>Jarak</h2>
+                        <span class="concept-icon" aria-hidden="true">↔</span>
+                        <p>Semua jalan yang ditempuh.</p>
+                        <button class="concept-audio" type="button" data-speak="Jarak adalah semua lintasan yang ditempuh oleh suatu benda." aria-label="Dengarkan penjelasan tentang jarak">🔊</button>
+                    </article>
+                </div>
+                <footer class="game-intro-footer">
+                    <p>⭐ Yuk, pahami konsepnya!</p>
+                    <div class="intro-footer-actions">
+                        <button class="intro-play" id="begin-game" type="button">🎮 Main Game</button>
+                        <button class="intro-accessibility" id="accessibility-toggle" type="button" aria-pressed="false" aria-label="Aktifkan mode aksesibilitas">⚙</button>
+                    </div>
+                </footer>
+            </div>
+            <div class="game-play" id="game-play" hidden>
+                <section class="route-screen" id="route-screen" hidden>
+                    <button class="back-button" id="return-to-intro" type="button">← Kembali ke kuis</button>
+                    <header class="route-screen-heading">
+                        <h1 id="route-screen-title">Latihan Rute dengan Mobil</h1>
+                        <p>Pilih satu rute. Seret mobil sendiri mengikuti jalur.</p>
+                    </header>
+                    <div class="route-grid" id="route-grid" aria-label="Pilihan kartu rute gerakan"></div>
+                </section>
+                <section class="route-instruction" id="route-instruction" hidden aria-labelledby="instruction-title">
+                    <button class="back-button" id="instruction-back" type="button">← Kembali ke kartu</button>
+                    <div class="route-instruction-card">
+                        <h1 id="instruction-title">Instruksi Gerakan</h1>
+                        <div id="instruction-illustration"></div>
+                        <label class="car-position-control" for="car-position-slider">
+                            Seret mobil dengan mouse atau jari. Kamu juga bisa menggeser pengatur posisi.
+                            <input id="car-position-slider" type="range" min="0" max="290" value="0" step="1" disabled>
+                        </label>
+                        <p id="instruction-text"></p>
+                        <button class="voice-button" id="listen-instruction" type="button" data-speak="Pindahkan mobil dari START ke A.">
+                            🔊 Dengarkan Instruksi
+                        </button>
+                        <p class="car-movement-status" id="car-movement-status" role="status" aria-live="polite"></p>
+                        <div class="movement-summary" id="movement-summary">
+                            <p><strong>Posisi awal</strong><span id="initial-position">START</span></p>
+                            <p><strong>Posisi akhir</strong><span id="final-position">Belum selesai</span></p>
+                            <p><strong>Jarak</strong><span id="travel-distance">0 meter</span></p>
+                            <p><strong>Perpindahan</strong><span id="displacement-distance">0 meter</span></p>
+                        </div>
+                        <div class="movement-actions">
+                            <button class="route-action movement-retry" id="repeat-activity" type="button">Ulangi Rute</button>
+                            <button class="route-action movement-next" id="next-instruction" type="button" hidden disabled>Instruksi Berikutnya</button>
+                            <button class="route-action" id="instruction-done" type="button" hidden disabled>Selesai</button>
+                        </div>
+                    </div>
+                </section>
+                <section class="route-question-screen" id="route-question-screen" hidden aria-labelledby="route-question-title">
+                    <div class="quiz-top-actions">
+                        <button class="back-button" id="quiz-menu-back" type="button" data-go="menu">← Menu</button>
+                        <button class="back-button" id="show-game-intro" type="button">Lihat pengantar</button>
+                    </div>
+                    <div class="route-question-card">
+                        <h1 id="route-question-title">Kuis Gerak Ceria</h1>
+                        <div class="quiz-progress" aria-live="polite">
+                            <span id="question-progress">Soal 1 dari 9</span>
+                            <span id="question-category"></span>
+                        </div>
+                        <div class="quiz-board" id="quiz-board" role="group" aria-label="Papan lintasan untuk soal"></div>
+                        <p class="route-question-text" id="route-question-text" aria-live="polite"></p>
+                        <div class="route-answer-list" id="route-answer-list"></div>
+                        <button class="voice-button" id="listen-question" type="button" data-speak="" aria-label="Dengarkan soal dan pilihan jawaban">
+                            🔊 Dengarkan Soal
+                        </button>
+                        <p class="quiz-hint" id="quiz-hint" role="status" aria-live="polite" hidden></p>
+                        <p class="route-feedback" id="route-feedback" role="status" aria-live="polite"></p>
+                        <div class="quiz-star-burst" id="quiz-star-burst" aria-hidden="true" hidden>⭐ ✨ ⭐</div>
+                        <div class="route-question-actions" id="route-question-actions" hidden>
+                            <button class="route-action" id="next-quiz-question" type="button">Soal Berikutnya</button>
+                        </div>
+                        <div class="quiz-footer-actions">
+                            <button class="route-action" id="practice-routes" type="button">Latihan 6 Rute dengan Mobil</button>
+                        </div>
+                    </div>
+                </section>
+                <section class="quiz-complete-screen" id="quiz-complete-screen" hidden aria-labelledby="quiz-complete-title">
+                    <div class="quiz-complete-card">
+                        <h1 id="quiz-complete-title">Yeay, permainan selesai!</h1>
+                        <p id="quiz-result" role="status" aria-live="polite"></p>
+                        <p id="quiz-encouragement">Kamu hebat sudah belajar posisi, jarak, dan perpindahan. Terus semangat!</p>
+                        <div class="quiz-footer-actions">
+                            <button class="route-action" id="restart-quiz" type="button">Main Lagi</button>
+                            <button class="route-action" id="finish-to-menu" type="button">Kembali ke Menu</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <p class="sr-only" id="game-audio-status" role="status" aria-live="polite"></p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
